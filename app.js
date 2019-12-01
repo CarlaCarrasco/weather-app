@@ -22,29 +22,21 @@ window.addEventListener('load', ()=> {
             .then(data => {
                 console.log(data);
                 const {temperature, summary, icon}= data.currently;
+                // Formula for celcius
+                const celcius = (temperature - 32) * (5/9);
+
                 // set DOM elements from the API
                 timeZone.textContent = data.timezone;
                 tempDegree.textContent = Math.floor(temperature);
                 tempDesc.textContent = summary;
-
-                // Formula for celcius
-                let celcius = (temperature - 32) * (5/9);
+                
                 // set Icon
                 setIcons(icon, document.querySelector(`.icon`));
 
                 // Change temperature to Celsius/Farenheit
                 tempSec.addEventListener('click', () => {
-                    if(tempSpan.textContent === 'F') {
-                        tempSpan.textContent = 'C';
-                        tempDegree.textContent = Math.floor(celcius);
-                        console.log(tempSpan.textContent)
-                    } else {
-                        tempSpan.textContent = 'F';
-                        tempDegree.textContent = Math.floor(temperature);
-                    }
+                    tempConversion (tempSpan, tempDegree, celcius, temperature);
                 });
-
-
             });
         });
         
@@ -55,7 +47,15 @@ window.addEventListener('load', ()=> {
         skycons.play(); // play svg
         return skycons.set(iconID, Skycons[currentIcon]);
     }
-    // else {
-    //     h1.textContent = "Enable geolocation to check the weather in your area"
-    // }
+
+    function tempConversion (span, degree, cel, temp) {
+        if(span.textContent === 'F') {
+            span.textContent = 'C';
+            degree.textContent = Math.floor(cel);
+        } else {
+            span.textContent = 'F';
+            degree.textContent = Math.floor(temp);
+        }
+    }
+    
 })
