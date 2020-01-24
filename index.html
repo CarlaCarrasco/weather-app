@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js">
 
 <head>
     <meta charset="utf-8">
@@ -7,23 +6,122 @@
     <title>Weather App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/9fe69a6270.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="location">
-        <h1 class="timezone"></h1>
-        <canvas class="icon" width="128" height="128"></canvas>
-    </div>
-    <div class="temp-section">
-        <div class="degree-section">
-            <h2 class="temp-degree">32</h2>
-            <span>F</span>
+    <div class="today">
+        <div class="location">
+            <h1>Current Weather</h1>
+            <h3 class="date"></h3>
+            <div class="temp-section">
+                <canvas class="today-icon" width="128" height="128"></canvas>
+                <div class="degree-section">
+                    <div class="temp-degree-section">
+                        <h2 class="temp-degree">&#9867</h2>
+                        <span class="fahrenheit">&#176F</span>
+                    </div>
+                    <div class="temp-description">Super freaking cold</div>
+                </div>
+            </div>
         </div>
-        <div class="temp-description">Super freaking cold</div>
+        <div class="today-info">
+            <div class="today-info-item">
+                <p>Timezone:</p>
+                <div class="timezone"></div>
+            </div>
+            <div class="today-info-item">
+                <p>Humidity:</p>
+                <div class="humidity"></div>
+            </div>
+            <div class="today-info-item">
+                <p>Percip:</p>
+                <div class="percip"></div>
+            </div>
+            <div class="today-info-item">
+                <p>Wind:</p>
+                <div class="wind"></div>
+            </div>
+        </div>
+
     </div>
+
+    </div>
+
+    <div class="wrapper">
+        <article class="grid-item one">
+            <h2 class="weekday"></h2>
+            <canvas class="daily-icon" width="128" height="128"></canvas>
+            <div class="daily-range">
+                <div class="daily-high">High</div>
+                <div class="daily-low">Low</div>
+            </div>
+            <div class="daily-range-degree">
+                <div class="daily-high-degree">&#9867</div>
+                <div class="daily-low-degree">&#9867</div>
+            </div>
+            <div class="daily-percip">
+                <span class="daily-percip-icon"><i class="fas fa-umbrella"></i></span>
+                <div class="daily-percip-percent">&#9867</div>
+            </div>
+        </article>
+        <article class="grid-item two">
+            <h2 class="weekday"></h2>
+            <canvas class="daily-icon" width="128" height="128"></canvas>
+            <div class="daily-range">
+                <div class="daily-high">High</div>
+                <div class="daily-low">Low</div>
+            </div>
+            <div class="daily-range-degree">
+                <div class="daily-high-degree">&#9867</div>
+                <div class="daily-low-degree">&#9867</div>
+            </div>
+            <div class="daily-percip">
+                <span class="daily-percip-icon"><i class="fas fa-umbrella"></i></span>
+                <div class="daily-percip-percent">&#9867</div>
+            </div>
+        </article>
+        <article class="grid-item three">
+            <h2 class="weekday"></h2>
+            <canvas class="daily-icon" width="128" height="128"></canvas>
+            <div class="daily-range">
+                <div class="daily-high">High</div>
+                <div class="daily-low">Low</div>
+            </div>
+            <div class="daily-range-degree">
+                <div class="daily-high-degree">&#9867</div>
+                <div class="daily-low-degree">&#9867</div>
+            </div>
+            <div class="daily-percip">
+                <span class="daily-percip-icon"><i class="fas fa-umbrella"></i></span>
+                <div class="daily-percip-percent">&#9867</div>
+            </div>
+        </article>
+        <article class="grid-item four">
+            <h2 class="weekday"></h2>
+            <canvas class="daily-icon" width="128" height="128"></canvas>
+            <div class="daily-range">
+                <div class="daily-high">High</div>
+                <div class="daily-low">Low</div>
+            </div>
+            <div class="daily-range-degree">
+                <div class="daily-high-degree">&#9867</div>
+                <div class="daily-low-degree">&#9867</div>
+            </div>
+            <div class="daily-percip">
+                <span class="daily-percip-icon"><i class="fas fa-umbrella"></i></span>
+                <div class="daily-percip-percent">&#9867</div>
+            </div>
+        </article>
+    </div>
+    <div class="footer">
+        <footer>Carla Carrasco Hooper</footer>
+    </div>
+    <!-- <script src="app.js"></script> -->
+    <script src="bundle.js"></script>
     <script src="skycons.js"></script>
-    <script src="app.js"></script>
+
 </body>
 
 </html>
