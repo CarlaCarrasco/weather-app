@@ -18,6 +18,7 @@ window.addEventListener('load', ()=> {
     let dailyIcon = document.querySelectorAll(`.daily-icon`);
     let curDay = new Date();
     let today = curDay.getDay();
+    console.log('this is a test');
     displayDate = (today) => {
         let displayDay = document.querySelector('.date');
         let weekDay = document.querySelectorAll('.weekday');
@@ -42,8 +43,9 @@ displayDate(today);
             latitude = position.coords.latitude;
             console.log(longitude);
             console.log(latitude);
-            const proxy = `http://cors-anywhere.herokuapp.com/` // for building the app locally
-            const api = `${proxy}https://api.darksky.net/forecast/${api_key}/${latitude},${longitude}`;
+            // const proxy = `http://cors-anywhere.herokuapp.com/` // for building the app locally
+            // const api = `${proxy}https://api.darksky.net/forecast/${api_key}/${latitude},${longitude}`;
+            const api = `https://api.darksky.net/forecast/${api_key}/${latitude},${longitude}`;
             fetch(api)
             .then(response => {
                 return response.json();
