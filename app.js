@@ -37,7 +37,7 @@ displayDate(today);
         navigator.geolocation.getCurrentPosition(position => {
             longitude = position.coords.longitude;
             latitude = position.coords.latitude;
-            const proxy = `http://cors-anywhere.herokuapp.com/` // for building the app locally
+            const proxy = `https://cors-anywhere.herokuapp.com/` // for building the app locally
             const api = `${proxy}https://api.darksky.net/forecast/0755c8e4747aca741c24bac39e7e7094/${latitude},${longitude}`;
             fetch(api)
             .then(response => {
