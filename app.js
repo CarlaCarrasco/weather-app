@@ -43,24 +43,17 @@ displayDate(today);
                 return response.json();
             })
             .then(data => {
-                console.log(data);    
                 const {humidity, precipProbability, temperature, summary, icon, windSpeed}= data.currently;
                 const daily =data.daily;
                 const weeklyData = data.daily.data;
-                console.log(weeklyData);
-                // Formula for celcius
-                const celcius = (temperature - 32) * (5/9);
-                console.log(`Hummidity: ${humidity}`);
-
+                const celcius = (temperature - 32) * (5/9); // Formula for celcius
                 // set DOM elements from the API
                 // Current Weather
                 timeZone.textContent = data.timezone;
                 tempDegree.textContent = Math.floor(temperature);
                 tempDesc.textContent = summary;
-                // highTemp.textContent = daily.data[0].apparentTemperatureHigh;
-                // lowTemp.textContent = daily.data[0].apparentTemperatureLow;
-                currentHumidity.textContent = `${humidity}%`;
-                percip.textContent = `${precipProbability}%`;
+                currentHumidity.textContent = `${Math.floor(humidity * 100)}%`;
+                percip.textContent = `${Math.floor(precipProbability * 100)}%`;
                 moonPhase.textContent = `${Math.floor(windSpeed)} mph`;
 
                 // This weeks forecast
@@ -70,9 +63,6 @@ displayDate(today);
                     day1percip[weekDay].textContent = `${Math.floor(weeklyData[weekDay].precipProbability * 100)}%`;
                     setIcons(weeklyData[weekDay].icon, dailyIcon[weekDay]);
                 }
-                
-
-                console.log(daily);
                 // set Icon
                 setIcons(icon, document.querySelector(`.today-icon`));
 
@@ -92,11 +82,11 @@ displayDate(today);
     }
 
     function tempConversion (span, degree, cel, temp) {
-        if(span.textContent === 'F') {
-            span.textContent = 'C';
+        if(span.textContent === '°F') {
+            span.textContent = '°C';
             degree.textContent = Math.floor(cel);
         } else {
-            span.textContent = 'F';
+            span.textContent = '°F';
             degree.textContent = Math.floor(temp);
         }
     }
