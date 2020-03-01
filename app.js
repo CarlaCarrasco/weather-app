@@ -19,18 +19,17 @@ window.addEventListener('load', ()=> {
         let displayDay = document.querySelector('.date');
         let weekDay = document.querySelectorAll('.weekday');
         let allDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        displayDay.textContent = allDays[today];
-        let d = 1;
-
-        while(d < 5) {
-            if (today > 6){
-                today = 0;
+        displayDay.textContent = allDays[6];
+        let day = 1;
+            while(day < 5) {
+                if (today >= 6){
+                    weekDay[day-1].textContent = allDays[day-1];
+                }
+                else {
+                    weekDay[day-1].textContent = allDays[today + day];
+                }
+                day++;
             }
-            weekDay[d-1].textContent = allDays[today + d];
-            d++;
-
-        }
-
     }
 displayDate(today);
     if(navigator.geolocation) {
