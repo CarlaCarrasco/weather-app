@@ -19,7 +19,7 @@ window.addEventListener('load', ()=> {
         let displayDay = document.querySelector('.date');
         let weekDay = document.querySelectorAll('.weekday');
         let allDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        displayDay.textContent = allDays[6];
+        displayDay.textContent = allDays[today];
         let day = 1;
             while(day < 5) {
                 if (today >= 6){

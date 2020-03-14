@@ -10,8 +10,6 @@
 html, body {
     height: 100%;
     overflow: auto;
-    display: flex;
-    flex-direction: column;
     background: linear-gradient(rgb(83, 215, 233), rgb(23, 47, 184));
     font-family: sans-serif;
     color:white;
